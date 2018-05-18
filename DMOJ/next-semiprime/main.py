@@ -36,14 +36,14 @@ def brent(N):
 	return g
 
 def miller_rabin_pass(a, s, d, n):
-	a_to_power = pow(a, d, n)
-	if a_to_power == 1:
+	apow = pow(a, d, n)
+	if apow == 1:
 		return True
 	for i in range(s-1):
-		if a_to_power == n - 1:
+		if apow == n - 1:
 			return True
-		a_to_power = (a_to_power * a_to_power) % n
-	return a_to_power == n - 1
+		apow = (apow * apow) % n
+	return apow == n - 1
 
 def miller_rabin(n):
 	if n < 2:
